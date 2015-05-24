@@ -1,7 +1,7 @@
 # Based on openfrontier/gerrit, slightly modified by kfmaster
 # Original MAINTAINER zsx <thinkernel@gmail.com>
 
-FROM java:openjdk-7-jre
+FROM library/java:openjdk-7-jre
 
 MAINTAINER kfmaster <fuhaiou@hotmail.com>
 
