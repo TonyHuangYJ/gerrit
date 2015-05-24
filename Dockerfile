@@ -21,9 +21,10 @@ COPY gerrit-start.sh ${GERRIT_HOME}/
 
 #Download gerrit.war
 RUN useradd -m -d "$GERRIT_HOME" -u 1000 -U  -s /bin/bash $GERRIT_USER \
-  && curl -L https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war -o $GERRIT_WAR \
-  && chmod +x ${GERRIT_HOME}/gerrit*.sh \
-  && mkdir -p $GERRIT_SITE
+   && chmod +x ${GERRIT_HOME}/gerrit*.sh \
+   && mkdir -p $GERRIT_SITE
+   
+RUN curl -sL https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war -o $GERRIT_WAR 
 
 USER $GERRIT_USER
 
