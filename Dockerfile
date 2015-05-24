@@ -24,7 +24,9 @@ RUN useradd -m -d "$GERRIT_HOME" -u 1000 -U  -s /bin/bash $GERRIT_USER \
    && chmod +x ${GERRIT_HOME}/gerrit*.sh \
    && mkdir -p $GERRIT_SITE
    
-RUN curl -sL https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war -o $GERRIT_WAR 
+#RUN curl -sL https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war -o $GERRIT_WAR 
+#To workaround download problem
+COPY gerrit.war $GERRIT_WAR
 
 USER $GERRIT_USER
 
